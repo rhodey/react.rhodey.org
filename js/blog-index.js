@@ -6,7 +6,7 @@ var Config = require('./config.js');
 var BlogEntryListItem = React.createClass({
   getSummaryHtml: function() {
     return {
-      __html : marked(this.props.entry.summary)
+      __html : marked(("*" + this.props.entry.date + " -* ") + this.props.entry.summary)
     };
   },
   render: function() {
