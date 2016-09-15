@@ -4,6 +4,11 @@ var marked = require('marked');
 var Config = require('./config.js');
 
 var BlogEntryListItem = React.createClass({
+  getSummaryHtml: function() {
+    return {
+      __html : marked(this.props.entry.summary)
+    };
+  },
   render: function() {
     return (
       <div className="blogEntryListItem">
@@ -14,7 +19,7 @@ var BlogEntryListItem = React.createClass({
         </h2>
         <div className="row">
           <p className="col-xs-12">
-            <span className="entryDate">{this.props.entry.date} -</span> {this.props.entry.summary}
+            <span dangerouslySetInnerHTML={this.getSummaryHtml()}/>
           </p>
         </div>
       </div>
