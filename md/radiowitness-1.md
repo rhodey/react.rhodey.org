@@ -1,5 +1,5 @@
 # The RadioWitness.io DSP Pipeline Part 1, Where to Start?
-![](https://medium2.global.ssl.fastly.net/max/2254/1*7WEaxvCbhRQIZoib1CNG_w.png)
+![](/img/radiowitness/view-cities.png)
 
 The [Radio Witness Project](http://radiowitness.io) began in 2015 with the goal of making police radio broadcasts more accessible to journalists. From the very start it was obvious that this would be a lot of work but I really didn’t expect 18 months and three cycles of burnout. I’m not a Radio Engineer, this project is much more *“Digital Signal Processing by Software Engineers”* than it is *“Software by Radio Engineers”* and to me that’s something that feels kinda new. Here’s a bulleted list of words to keep you thirsty for the remainder of this series:
 
@@ -14,7 +14,7 @@ I wish I had a fancy PDF to embed here or even a picture of some napkin with vag
 ## Evaluating GNU Radio
 It is difficult to think about Software Defined Radio without *[GNU Radio](http://gnuradio.org/)* also popping into mind, and for good reason! GNU Radio has been around since the beginning of the SDR boom and has almost definitely received more development hours than any other open source DSP project. GNU Radio is comprised of a general purpose DSP library and an extremely powerful graphical application called *GRC* (GNU Radio Companion).
 
-![](https://medium2.global.ssl.fastly.net/max/2098/1*0MILnpYDpyIKyHP_obg_Xg.png)
+![](/img/radiowitness/gnu-radio-companion.png)
 
 Use of GRC is very thoroughly documented in many tutorials all across the internet, if there is an RF signal you want to analyze chances are someone’s already recorded the process on YouTube. GRC tutorials for listening to police radio have existed for years but all of them involve a desktop environment and skilled human operator, nothing that could run by itself on a headless server for months on end. I figured out pretty quickly that GRC was a tool for experimentation and that I’d have to script with the library to create any real applications.
 
@@ -27,7 +27,7 @@ After some time I decided it’d be best to put the official GNU Radio examples 
 
 [P25](https://en.wikipedia.org/wiki/Project_25) is the most popular protocol for police and first responder radio in the United States, could it be that my work was already near complete? I rushed to find install instructions and step by step began to have GNU Radio build process flashbacks in a very bad way. Long story short I found a magic thread on the [RadioReference.com forums](http://forums.radioreference.com/) that instructed me to checkout a magic revision number on a magic SVN branch and finally I had something.
 
-![](https://medium2.global.ssl.fastly.net/max/2000/1*XRgQLgZorbPrTemV0bnv3A.png)
+![](/img/radiowitness/op25.png)
 
 Over the next few weeks I spent a lot of time blindly fiddling with OP25 buttons, sliders, and command line options atop my roof in Oakland, California. Every now and then I’d decode a few seconds of OPD audio but was never able to hit a stable state and my laptop was running very hot without much to show for it. To make OP25 work for me I’d have to decouple the GUI from the P25 decoding pipeline and improve performance significantly.
 
@@ -46,7 +46,7 @@ My SDR is a USRP model B100; now discontinued, this was one of the first softwar
 
 Over the next few months I created the [uhd-java](https://github.com/radiowitness/uhd-java) library and then hooked it into SDRTrunk by example of the SDR drivers already existing in their codebase. Writing uhd-java was a lot of work but integration with SDRTrunk was refreshingly straightforward and required little knowledge of digital signal processing. Finally I had something that built easily, ran as expected, and could be modified and rebuilt without great trouble.
 
-![](https://medium2.global.ssl.fastly.net/max/2560/1*XvksheMJ--W4CaXvoc96dA.png)
+![](/img/radiowitness/sdr-trunk.png)
 
 ## Starting From Scratch With dsp-common
 Working with SDTrunk taught me **a lot**, I spent a month or two toying with the codebase and this more than anything else became the foundation of my DSP education. However, just like with GNU Radio this was a DSP GUI and library in one project and the library was not easily decoupled. With nowhere else to turn I very reluctantly began work on [dsp-common](https://github.com/radiowitness/dsp-common). If I was to start this over today I’d probably begin with [luaradio](http://luaradio.io/) which at the time did not exist.
