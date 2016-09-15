@@ -4,7 +4,7 @@ var Ajax = function() { };
 Ajax.prototype.get = function(url, callback) {
   $.ajax({
     url: url,
-    dataType: 'json',
+    dataType: 'text',
     cache: false,
     success: callback,
     error: function(xhr, status, err) {
