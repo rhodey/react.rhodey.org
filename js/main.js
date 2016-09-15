@@ -13,7 +13,9 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="container row">
-        <div className="col-xs-12">{this.props.children}</div>
+        <div className="col-xs-2"/>
+        <div className="col-xs-8">{this.props.children}</div>
+        <div className="col-xs-2"/>
       </div>
     );
   }

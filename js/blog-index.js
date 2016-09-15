@@ -7,8 +7,16 @@ var BlogEntryListItem = React.createClass({
   render: function() {
     return (
       <div className="blogEntryListItem">
-        title: {this.props.entry.title}, date: {this.props.entry.date}, summary: {this.props.entry.summary}
-        <Link to={"/entry/" + this.props.entry.id}>check it</Link>
+        <h2 className="row">
+          <Link to={"/entry/" + this.props.entry.id}>
+            {this.props.entry.title}
+          </Link>
+        </h2>
+        <div className="row">
+          <p className="col-xs-12">
+            <span className="entryDate">{this.props.entry.date} -</span> {this.props.entry.summary}
+          </p>
+        </div>
       </div>
     );
   }
