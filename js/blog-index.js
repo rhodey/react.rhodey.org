@@ -44,6 +44,9 @@ var BlogEntryList = React.createClass({
 });
 
 var BlogIndexBox = React.createClass({
+  componentWillMount: function() {
+    document.title = "rhodey.github.io";
+  },
   render: function() {
     return (
       <div className="blogIndexBox">
