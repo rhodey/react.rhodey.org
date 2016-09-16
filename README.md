@@ -4,6 +4,7 @@ todo:
   + RadioWitness.io series
   + High Frequency Trading Intro
   + Tax Scrape
+  + Coinbase GDAX bug report
   + ZodiacTweets.com
   + Flock
   + ChubSAT
