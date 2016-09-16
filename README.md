@@ -21,12 +21,12 @@ $ npm install
 
 ## Index Markdown
 ```
-$ node js/gen-config.js
+$ npm run index
 ```
 
-## Build
+## Bundle
 ```
-$ npm run build 
+$ npm run bundle
 ```
 
 ## Testing
