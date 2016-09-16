@@ -23,6 +23,13 @@ config.entries['ethereum-wallet-exploit'] = {
   summary  : "This vulnerability was originally reported to the Etherum Bug Bounty on June 12th, 2016. As far as I can tell no clients have been patched and any developer made aware of this has since forgotten. At the core of this attack is a *DNS Rebinding* vulnerability, in this post I explain the vulnerability, suggest an exploit, and leave you with a complete proof-of-concept exploit solution."
 }
 
+config.entries['ssh-fish-feeder'] = {
+  filename : "/md/ssh-fish-feeder.md",
+  date     : "February 23, 2013",
+  title    : "SSH Fish Feeder",
+  summary  : "It was the day before Winter Break 2012 and I had no more than 30 minutes to finish packing before getting the boot from my dorm room. I had everything packed in the back of my Subaru and made my way upstairs for a final look-around, wait-- what was that? The sound of running water? Could it be that the fish tank my friends and I went in on together somehow ended up in my room? **It could. it was. lame.**"
+}
+
 config.entries['4chan-regex'] = {
   filename : "/md/4chan-regex.md",
   date     : "Some Day, 2007",
