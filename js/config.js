@@ -23,6 +23,13 @@ config.entries['ethereum-wallet-exploit'] = {
   summary  : "This vulnerability was originally reported to the Etherum Bug Bounty on June 12th, 2016. As far as I can tell no clients have been patched and any developer made aware of this has since forgotten. At the core of this attack is a *DNS Rebinding* vulnerability, in this post I explain the vulnerability, suggest an exploit, and leave you with a complete proof-of-concept exploit solution."
 }
 
+config.entries['some-midi'] = {
+  filename : "/md/some-midi.md",
+  date     : "July 18, 2014",
+  title    : "Some MIDI",
+  summary  : "Early in the Summer of 2014 I was lucky enough to drive a junky old bus days up North and spend a full week with friends and community at [ToorCamp](http://toorcamp.toorcon.net/). I wish I had done more to document the ways in which we [broke](https://twitter.com/liliakai/status/489122375506489346) and fixed this bus and how the bus broke and fixed us in return but all I have to tell you now is that at some point in that trip my laptop screen cracked, badly. My broken laptop led to weeks of unproductivity but concluded in my first MIDI composition."
+}
+
 config.entries['twitter-squat'] = {
   filename : "/md/twitter-squat.md",
   date     : "June 5, 2014",
