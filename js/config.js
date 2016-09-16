@@ -23,5 +23,12 @@ config.entries['ethereum-wallet-exploit'] = {
   summary  : "This vulnerability was originally reported to the Etherum Bug Bounty on June 12th, 2016. As far as I can tell no clients have been patched and any developer made aware of this has since forgotten. At the core of this attack is a *DNS Rebinding* vulnerability, in this post I explain the vulnerability, suggest an exploit, and leave you with a complete proof-of-concept exploit solution."
 }
 
+config.entries['4chan-regex'] = {
+  filename : "/md/4chan-regex.md",
+  date     : "Some Day, 2007",
+  title    : "4chan Regex Practice",
+  summary  : "**Many, many years ago** I decided that I needed some regex practice, and background aside I'd like to think that any survey is a survey worth sharing. What follows is a quick survey of the sex and age of 4chan commenters using exclusively shell commands. This is the bottom of the barrell my friends."
+}
+
 
 module.exports = config;
