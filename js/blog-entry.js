@@ -1,7 +1,8 @@
-var React  = require('react');
-var marked = require('marked');
-var Ajax   = require('./ajax.js');
-var Config = require('./config.js');
+var React     = require('react');
+var marked    = require('marked');
+var highlight = require('highlight.js');
+var Ajax      = require('./ajax.js');
+var Config    = require('./config.js');
 
 
 var BlogEntryBox = React.createClass({
@@ -23,6 +24,7 @@ var BlogEntryBox = React.createClass({
     };
   },
   componentWillMount: function() {
+    marked.setOptions({highlight: function (code) { return highlight.highlightAuto(code).value; }});
     document.title = this.state.entry.title;
     this.loadMarkdown();
   },
