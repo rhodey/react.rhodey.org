@@ -1,4 +1,11 @@
-# SSH Fish Feeder
+!!!
+ssh-fish-feeder
+December 17, 2012
+SSH Fish Feeder
+It was the day before Winter Break 2012 and I had no more than 30 minutes to finish packing before getting the boot from my dorm room. I had everything packed in the back of my Subaru and made my way upstairs for a final look-around, wait-- what was that? The sound of running water? Could it be that the fish tank my friends and I went in on together somehow ended up in my room? **It could. it was. lame.**
+!!!
+
+
 Every couple of years I find myself wandering about the pet store to help a friend pick up dog food or something. On a few of these occasions I've stumble into the fish isle, convinced myself that pet fish are rad enough to purchase, and usually  regret the purchase before making it home. Tonight my friend I have but two pieces of information to share with you:
 
 1. pet fish are lame

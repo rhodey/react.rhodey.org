@@ -1,4 +1,11 @@
-# The RadioWitness.io DSP Pipeline Part 2, Decoding P25
+!!!
+radiowitness-decoding-p25
+September 14, 2016
+The RadioWitness.io DSP Pipeline Part 2, Decoding P25
+In the second entry of this series I walk you step by step through the process of decoding digital bits from an analog RF signal. The fundamentals of *Digital Signal Processing* are all covered in detail including sampling, frequency translation, resampling, baseband filtering, demodulation, and decoding. This is the *"DSP for Software Engineers"* guide I wish I had 18 months ago.
+!!!
+
+
 In the [previous post](https://medium.com/@rhodey/the-radiowitness-io-dsp-pipeline-part-1-where-to-start-28157cc975a6) I introduced the [Radio Witness Project](https://radiowitness.io), outlined the contents of this series, and basically laid out my excuse for ditching all prior work and starting from scratch. Decoding P25 took me months to understand but I hope to explain it to you in a few minutes (✿◠‿◠).
 
 > **Project 25** (**P25** or **APCO-25**) is a suite of standards for [digital](https://en.wikipedia.org/wiki/Digital_radio) [radio](https://en.wikipedia.org/wiki/Professional_Mobile_Radio) communications for use by federal, state/province and local [Public safety organizations](https://en.wikipedia.org/wiki/Public_safety_organizations) in [North America](https://en.wikipedia.org/wiki/North_America) to enable them to communicate with other agencies and mutual aid response teams in emergencies.

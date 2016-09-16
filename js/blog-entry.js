@@ -5,11 +5,14 @@ var Config = require('./config.js');
 
 
 var BlogEntryBox = React.createClass({
+  chopHeader: function(markdown) {
+    return markdown.split('\n').slice(6).join('\n');
+  },
   loadMarkdown: function() {
     Ajax.get(
       this.state.entry.filename,
       function(markdown) {
-        this.setState({ __html : marked(markdown) });
+        this.setState({ __html : marked(this.chopHeader(markdown)) });
       }.bind(this)
     );
   },
@@ -26,6 +29,7 @@ var BlogEntryBox = React.createClass({
   render: function() {
     return (
       <div className="blogEntryBox">
+        <h1>{this.state.entry.title}</h1>
         <div dangerouslySetInnerHTML={this.state} />
       </div>
     );

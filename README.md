@@ -19,6 +19,11 @@ todo:
 $ npm install
 ```
 
+## Index Markdown
+```
+$ node js/gen-config.js
+```
+
 ## Build
 ```
 $ npm run build 

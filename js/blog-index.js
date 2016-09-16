@@ -3,6 +3,7 @@ var Link   = require('react-router').Link;
 var marked = require('marked');
 var Config = require('./config.js');
 
+
 var BlogEntryListItem = React.createClass({
   getSummaryHtml: function() {
     return {
@@ -13,7 +14,7 @@ var BlogEntryListItem = React.createClass({
     return (
       <div className="blogEntryListItem">
         <h2 className="row">
-          <Link to={"/entry/" + this.props.entry.id}>
+          <Link to={"/entry/" + this.props.entry.path}>
             {this.props.entry.title}
           </Link>
         </h2>
@@ -30,9 +31,7 @@ var BlogEntryListItem = React.createClass({
 var BlogEntryList = React.createClass({
   render: function() {
     var items = Object.keys(this.props.entries).map(function(key) {
-      var entry = this.props.entries[key];
-      entry.id  = key;
-      return <BlogEntryListItem key={key} entry={entry} />;
+      return <BlogEntryListItem key={key} entry={this.props.entries[key]} />;
     }.bind(this));
 
     return (

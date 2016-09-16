@@ -1,4 +1,11 @@
-# Dillinger Daemon
+!!!
+dillinger-daemon
+September 16, 2016
+Dillinger Daemon
+I use Vim as my one, true text editor and generally do a great job of avoiding other GUI-based editors and IDEs. However, time and time again I lose this battle when it comes to editting markdown. It's embarassing to admit, but I used to rely on [GitHub Gists](https://gist.github.com/) to edit markdown before spending a few months with the [Vim Markdown Plugin](https://github.com/plasticboy/vim-markdown). All that changed today when I discovered [Dillinger](http://dillinger.io/).
+!!!
+
+
 I use Vim as my one, true text editor and generally do a great job of avoiding other GUI-based editors and IDEs. However, time and time again I lose this battle when it comes to editting markdown. It's embarassing to admit, but I used to rely on [GitHub Gists](https://gist.github.com/) to edit markdown before spending a few months with the [Vim Markdown Plugin](https://github.com/plasticboy/vim-markdown). All that changed today when I discovered [Dillinger](http://dillinger.io/).
 
 > Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
