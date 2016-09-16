@@ -32,14 +32,14 @@ config.entries['twitter-squat'] = {
 
 config.entries['stratfor-relationship-graph'] = {
   filename : "/md/stratfor.md",
-  date     : "January 28, 2013",
+  date     : "June 28, 2012",
   title    : "Stratfor Relationship Graph",
-  summary  : "On Monday February 27th, 2012 WikiLeaks began publishing [The Global Intelligence Files](http://wikileaks.org/the-gifiles.html), over five million e-mails from the Texas headquartered \"global intelligence\" company Stratfor. Sometime during the summer of 2012 **long, long before [d3.js](https://d3js.org/)** I spent a few hours paging through these emails. Wikileak's website allows you to browse by date of release or date of the document itself but this method of examination soon lost my interest, what I really wanted was a holistic understanding of the emails without having to think all that much."
+  summary  : "In early 2012 WikiLeaks began publishing [The Global Intelligence Files](http://wikileaks.org/the-gifiles.html), over five million e-mails from the Texas headquartered \"global intelligence\" company Stratfor. Sometime during the summer of 2012 **long, long before [d3.js](https://d3js.org/)** I spent a few hours paging through these emails. Wikileak's website allows you to browse by date of release or date of the document itself but this method of examination soon lost my interest, what I really wanted was a holistic understanding of the emails without having to think all that much."
 }
 
 config.entries['ssh-fish-feeder'] = {
   filename : "/md/ssh-fish-feeder.md",
-  date     : "February 23, 2013",
+  date     : "December 17, 2012",
   title    : "SSH Fish Feeder",
   summary  : "It was the day before Winter Break 2012 and I had no more than 30 minutes to finish packing before getting the boot from my dorm room. I had everything packed in the back of my Subaru and made my way upstairs for a final look-around, wait-- what was that? The sound of running water? Could it be that the fish tank my friends and I went in on together somehow ended up in my room? **It could. it was. lame.**"
 }
