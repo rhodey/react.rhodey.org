@@ -1,6 +1,18 @@
 # rhodey.github.io
 
-lol, ayyyy
+todo:
+  + RadioWitness.io series
+  + High Frequency Trading Intro
+  + Tax Scrape
+  + ZodiacTweets.com
+  + Flock
+  + ChubSAT
+  + Opposite Day
+  + Light Sockets
+  + ZoneGuard
+  + ScienceBox
+  + R.O.B.
+  + First Freelance Gig
 
 ## Setup
 ```
