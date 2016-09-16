@@ -30,6 +30,13 @@ config.entries['twitter-squat'] = {
   summary  : "At the time of writing this some bot is squatting [@rhodey](http://twitter.com/rhodey) on Twitter and has been for some time. I don't remember to check the availability of this handle very frequently and would hate to have it open up only to be squatted again so I put together this simple bash script."
 }
 
+config.entries['stratfor-relationship-graph'] = {
+  filename : "/md/stratfor.md",
+  date     : "January 28, 2013",
+  title    : "Stratfor Relationship Graph",
+  summary  : "On Monday February 27th, 2012 WikiLeaks began publishing [The Global Intelligence Files](http://wikileaks.org/the-gifiles.html), over five million e-mails from the Texas headquartered \"global intelligence\" company Stratfor. Sometime during the summer of 2012 **long, long before [d3.js](https://d3js.org/)** I spent a few hours paging through these emails. Wikileak's website allows you to browse by date of release or date of the document itself but this method of examination soon lost my interest, what I really wanted was a holistic understanding of the emails without having to think all that much."
+}
+
 config.entries['ssh-fish-feeder'] = {
   filename : "/md/ssh-fish-feeder.md",
   date     : "February 23, 2013",
