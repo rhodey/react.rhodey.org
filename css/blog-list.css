@@ -7,6 +7,19 @@
   margin-bottom: 42px;
 }
 
+.blogListItem .blogEntryMeta {
+  text-align: center;
+}
+
+.blogListItem .blogEntryMeta .row {
+  margin: 0px;
+  padding: 0px;
+}
+
+.blogListItem .blogEntryEmoji {
+  font-size: 1.2em;
+}
+
 .blogListItem .blogEntryDate {
   font-size: 1.2em;
 }

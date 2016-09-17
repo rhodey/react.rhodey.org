@@ -7,7 +7,10 @@ var BlogEntryMeta = React.createClass({
   render: function() {
     return (
       <div className="blogEntryMeta"><p>
-        <span className="blogEntryDate">
+        <span className="blogEntryEmoji row">
+          🆒🆒🆒🆒 
+        </span>
+        <span className="blogEntryDate row">
           {this.props.entry.date}
         </span>
       </p></div>
