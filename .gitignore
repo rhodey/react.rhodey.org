@@ -1,8 +1,10 @@
 notes.txt
 
-node_modules/
 bundle.js
 bundle.css
+js/blog-index.js
+
+node_modules/
 npm-debug.log
 
 ~*
