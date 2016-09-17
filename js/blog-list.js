@@ -2,6 +2,7 @@ var React   = require('react');
 var Link    = require('react-router').Link;
 var marked  = require('marked');
 var blogidx = require('./blog-index.js');
+var Ajax    = require('./ajax.js');
 
 var EMOTI_INTERVAL = 800;
 var EMOTICONS      = [
@@ -56,9 +57,22 @@ var BlogEntryGist = React.createClass({
 });
 
 var BlogListItem = React.createClass({
+  getInitialState: function() {
+    return { cached : false };
+  },
+  fillCache: function() {
+    if (this.state.cached === false) {
+      this.setState({ cached : true });
+    }
+  },
+  componentWillUpdate: function(nextProps, nextState) {
+    if (this.state.cached !== nextState.cached) {
+      Ajax.get(this.props.entry.filename, function() {});
+    }
+  },
   render: function() {
     return (
-      <div className="blogListItem">
+      <div className="blogListItem" onMouseOver={this.fillCache}>
         <div className="row">
           <div className="col-xs-3">
             <BlogEntryMeta entry={this.props.entry} emoticon={this.props.emoticon} />
