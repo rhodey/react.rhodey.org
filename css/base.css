@@ -10,17 +10,15 @@ body {
 }
 
 h1 {
-  margin: 0px;
   font-size: 38px;
 }
 
 h2 {
-  margin: 0px;
   font-size: 30px;
+  margin-top: 36px;
 }
 
 h3 {
-  margin: 0px;
   font-size: 20px;
 }
 

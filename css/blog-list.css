@@ -7,6 +7,10 @@
   margin-bottom: 42px;
 }
 
+.blogListItem h2 {
+  margin: 0px;
+}
+
 .blogListItem .blogEntryMeta {
   padding-top: 5px;
   text-align: center;
