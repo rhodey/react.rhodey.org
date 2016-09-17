@@ -1,7 +1,4 @@
-.blogListBox {
-  width: 80%;
-  margin: 0 auto;
-}
+.blogListBox { }
 
 .blogListItem {
   margin-bottom: 42px;
@@ -13,7 +10,6 @@
 
 .blogListItem .blogEntryMeta {
   padding-top: 5px;
-  text-align: center;
 }
 
 .blogListItem .blogEntryMeta .row {

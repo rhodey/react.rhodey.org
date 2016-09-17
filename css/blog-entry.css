@@ -1,6 +1,13 @@
 .blogEntryBox {
-  width: 70%;
-  margin: 0 auto;
+  width: 90%;
+}
+
+.blogEntryBox h1 {
+  margin-top: 0px;
+}
+
+.blogEntryBox h2 {
+  margin-top: 36px;
 }
 
 .blogEntryBox img {

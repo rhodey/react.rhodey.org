@@ -4,18 +4,17 @@ var Router         = require('react-router').Router;
 var Route          = require('react-router').Route;
 var IndexRoute     = require('react-router').IndexRoute;
 var browserHistory = require('react-router').browserHistory;
-var Helmet         = require('react-helmet');
 
+var Header    = require('./header.js');
 var BlogList  = require('./blog-list.js');
 var BlogEntry = require('./blog-entry.js');
-var metatags  = require('./meta-tags.js');
 
 
 var App = React.createClass({
   render: function() {
     return (
-      <div className="container">
-        <Helmet title="rhodey.org" meta={metatags} />
+      <div className="app">
+        <Header/>
         {this.props.children}
       </div>
     );
