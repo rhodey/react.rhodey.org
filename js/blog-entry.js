@@ -28,14 +28,25 @@ var BlogEntryBox = React.createClass({
     marked.setOptions({highlight: function (code) { return highlight.highlightAuto(code).value; }});
     this.loadMarkdown();
   },
-  render: function() {
+  renderSkeleton: function() {
     return (
       <div className="blogEntryBox">
         <Helmet title={this.state.entry.title} />
-        <h1>{this.state.entry.title}</h1>
-        <div dangerouslySetInnerHTML={this.state} />
       </div>
     );
+  },
+  render: function() {
+    if (this.state.__html.length === 0) {
+      return this.renderSkeleton();
+    } else {
+      return (
+        <div className="blogEntryBox">
+          <Helmet title={this.state.entry.title} />
+          <h1>{this.state.entry.title}</h1>
+          <div dangerouslySetInnerHTML={this.state} />
+        </div>
+      );
+    }
   }
 });
 
