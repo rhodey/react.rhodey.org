@@ -8,13 +8,14 @@ var Helmet      = require('react-helmet');
 
 var BlogList  = require('./blog-list.js');
 var BlogEntry = require('./blog-entry.js');
+var metatags  = require('./meta-tags.js');
 
 
 var App = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <Helmet title="rhodey.github.io"/>
+        <Helmet title="rhodey.github.io" meta={metatags}/>
         <div className="row">
           <div className="col-xs-2"/>
           <div className="col-xs-8">{this.props.children}</div>
