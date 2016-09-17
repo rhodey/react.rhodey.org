@@ -3,15 +3,23 @@ var Link    = require('react-router').Link;
 var marked  = require('marked');
 var blogidx = require('./blog-index.js');
 
+var EMOTI_INTERVAL = 1000;
+var EMOTICONS      = [
+  "(*_*;)", "(+_+)",    "(@_@)",     "(＠_＠;)",
+  "(≧∇≦)/", "(/◕ヮ◕)/", "(*^▽^*)",   "(✿◠‿◠)",
+  "(T_T)",  "(Ｔ▽Ｔ)",  "(ー_ー)!!", "ヽ（´ー｀）┌"
+];
+
+
 var BlogEntryMeta = React.createClass({
   render: function() {
     return (
       <div className="blogEntryMeta"><p>
-        <span className="blogEntryEmoji row">
-          🆒🆒🆒🆒 
-        </span>
         <span className="blogEntryDate row">
           {this.props.entry.date}
+        </span>
+        <span className="blogEntryEmoticon row">
+          {this.props.emoticon}
         </span>
       </p></div>
     );
@@ -46,7 +54,7 @@ var BlogListItem = React.createClass({
       <div className="blogListItem">
         <div className="row">
           <div className="col-xs-3">
-            <BlogEntryMeta entry={this.props.entry} />
+            <BlogEntryMeta entry={this.props.entry} emoticon={this.props.emoticon} />
           </div>
           <div className="col-xs-9">
             <BlogEntryGist entry={this.props.entry} />
@@ -58,10 +66,26 @@ var BlogListItem = React.createClass({
 });
 
 var BlogListBox = React.createClass({
-  render: function() {
-    var items = Object.keys(blogidx).map(function(key) {
-      return <BlogListItem key={key} entry={blogidx[key]} />;
+  cycleEmoticon: function() {
+    this.setState({
+      emotiIdx  : this.state.emotiIdx + 1,
+      timeoutId : setTimeout(this.cycleEmoticon, EMOTI_INTERVAL)
     });
+  },
+  getInitialState: function() {
+    return {
+      emotiIdx  : Math.floor(Math.random() * 100),
+      timeoutId : setTimeout(this.cycleEmoticon, EMOTI_INTERVAL)
+    };
+  },
+  componentWillUnmount: function() {
+    clearTimeout(this.state.timeoutId);
+  },
+  render: function() {
+    var items = Object.keys(blogidx).map(function(key, idx) {
+      var emoticon = EMOTICONS[(this.state.emotiIdx - idx) % EMOTICONS.length];
+      return <BlogListItem key={key} entry={blogidx[key]} emoticon={emoticon} />;
+    }.bind(this));
 
     return (
       <div className="blogListBox">
