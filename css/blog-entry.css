@@ -1,4 +1,7 @@
-.blogEntryBox { }
+.blogEntryBox {
+  width: 70%;
+  margin: 0 auto;
+}
 
 .blogEntryBox img {
   display: block;
