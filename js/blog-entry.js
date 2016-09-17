@@ -42,8 +42,14 @@ var BlogEntryBox = React.createClass({
       return (
         <div className="blogEntryBox">
           <Helmet title={this.state.entry.title} />
-          <h1>{this.state.entry.title}</h1>
-          <div dangerouslySetInnerHTML={this.state} />
+          <div className="row">
+            <div className="col-xs-2"/>
+            <div className="col-xs-8">
+              <h1>{this.state.entry.title}</h1>
+              <div className="blogEntryMarkdown" dangerouslySetInnerHTML={this.state} />
+            </div>
+            <div className="col-xs-2"/>
+          </div>
         </div>
       );
     }

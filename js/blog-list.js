@@ -34,7 +34,13 @@ var BlogListBox = React.createClass({
 
     return (
       <div className="blogListBox">
-        {items}
+        <div className="row">
+          <div className="col-xs-2"/>
+          <div className="col-xs-8">
+            {items}
+          </div>
+          <div className="col-xs-2"/>
+        </div>
       </div>
     );
   }

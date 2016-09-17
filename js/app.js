@@ -15,12 +15,8 @@ var App = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <Helmet title="rhodey.org" meta={metatags}/>
-        <div className="row">
-          <div className="col-xs-2"/>
-          <div className="col-xs-8">{this.props.children}</div>
-          <div className="col-xs-2"/>
-        </div>
+        <Helmet title="rhodey.org" meta={metatags} />
+        {this.props.children}
       </div>
     );
   }
