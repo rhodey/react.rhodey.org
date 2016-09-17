@@ -1,5 +1,12 @@
-.blogListBox { }
+.blogListBox {
+  width: 80%;
+  margin: 0 auto;
+}
 
 .blogListItem {
   margin-bottom: 42px;
+}
+
+.blogListItem .blogEntryDate {
+  font-size: 1.2em;
 }
