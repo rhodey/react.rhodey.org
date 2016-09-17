@@ -1,12 +1,12 @@
 {
-  "name": "rhodey.github.io",
+  "name": "rhodey.org",
   "author": "rhodey orbits",
   "description": "lol, ayyyy",
   "license": "GPL-3.0",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rhodey/rhodey.github.io"
+    "url": "https://github.com/rhodey/rhodey.org"
   },
   "scripts": {
     "index": "node js/gen-blog-index.js",
