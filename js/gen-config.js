@@ -52,6 +52,7 @@ function writeToConfig(headers) {
 
 var headers = [];
 fs.readdir('md/', function(err, files) {
+  files = files.filter(function(file) { return file.endsWith(".md"); });
   if (err) {
     console.log("err -> " + err);
   } else {

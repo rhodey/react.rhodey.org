@@ -2,7 +2,7 @@
 radiowitness-where-to-start
 August 8, 2016
 The RadioWitness.io DSP Pipeline Part 1, Where to Start?
-The [Radio Witness Project](http://radiowitness.io) began in 2015 with the goal of making police radio broadcasts more accessible to journalists. From the very start it was obvious that this would be a lot of work but I really didn’t expect 18 months and three cycles of burnout. In this first post I introduce the project and explain how surprisingly difficult it was to find a starting point. Spoiler: GNURadio made me cry.
+The [Radio Witness Project](http://radiowitness.io) began in 2015 with the goal of making police radio broadcasts more accessible to journalists. From the very start it was obvious that this would be a lot of work but I really didn’t expect 18 months and three cycles of burnout. In this first post I introduce the project and explain how surprisingly difficult it was to find a starting point. *Spoiler: GNURadio made me cry*.
 !!!
 
 
