@@ -17,7 +17,7 @@ function headerFor(filename, cb) {
       header.push(line);
     } else if (lineCount === 6) {
       cb({
-        filename : filename,
+        filename : "/" + filename,
         path     : header[0],
         date     : header[1],
         title    : header[2],

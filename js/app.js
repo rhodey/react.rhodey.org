@@ -1,10 +1,10 @@
-var React       = require('react');
-var ReactDOM    = require('react-dom');
-var Router      = require('react-router').Router;
-var Route       = require('react-router').Route;
-var IndexRoute  = require('react-router').IndexRoute;
-var hashHistory = require('react-router').hashHistory;
-var Helmet      = require('react-helmet');
+var React          = require('react');
+var ReactDOM       = require('react-dom');
+var Router         = require('react-router').Router;
+var Route          = require('react-router').Route;
+var IndexRoute     = require('react-router').IndexRoute;
+var browserHistory = require('react-router').browserHistory;
+var Helmet         = require('react-helmet');
 
 var BlogList  = require('./blog-list.js');
 var BlogEntry = require('./blog-entry.js');
@@ -27,7 +27,7 @@ var App = React.createClass({
 });
 
 ReactDOM.render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={BlogList} />
       <Route path="/blog/:entryId" component={BlogEntry} />
