@@ -1,4 +1,5 @@
 var React     = require('react');
+var Helmet    = require('react-helmet');
 var marked    = require('marked');
 var highlight = require('highlight.js');
 var Ajax      = require('./ajax.js');
@@ -25,12 +26,12 @@ var BlogEntryBox = React.createClass({
   },
   componentWillMount: function() {
     marked.setOptions({highlight: function (code) { return highlight.highlightAuto(code).value; }});
-    document.title = this.state.entry.title;
     this.loadMarkdown();
   },
   render: function() {
     return (
       <div className="blogEntryBox">
+        <Helmet title={this.state.entry.title} />
         <h1>{this.state.entry.title}</h1>
         <div dangerouslySetInnerHTML={this.state} />
       </div>

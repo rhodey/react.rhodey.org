@@ -14,9 +14,7 @@ var BlogEntryListItem = React.createClass({
     return (
       <div className="blogEntryListItem">
         <h2 className="row">
-          <Link to={"/entry/" + this.props.entry.path}>
-            {this.props.entry.title}
-          </Link>
+          <Link to={"/blog/" + this.props.entry.path}>{this.props.entry.title}</Link>
         </h2>
         <div className="row">
           <p className="col-xs-12">
@@ -43,9 +41,6 @@ var BlogEntryList = React.createClass({
 });
 
 var BlogIndexBox = React.createClass({
-  componentWillMount: function() {
-    document.title = "rhodey.github.io";
-  },
   render: function() {
     return (
       <div className="blogIndexBox">
