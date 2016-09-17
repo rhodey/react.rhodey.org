@@ -23,7 +23,7 @@ function getEntrySources(sources) {
 
 var config = {
   entry : getEntrySources([
-    APP_DIR   + '/main.js',
+    APP_DIR   + '/app.js',
     STYLE_DIR + '/bundle.less'
   ]),
   output : {

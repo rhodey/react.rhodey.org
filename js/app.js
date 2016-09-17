@@ -6,7 +6,7 @@ var IndexRoute  = require('react-router').IndexRoute;
 var hashHistory = require('react-router').hashHistory;
 var Helmet      = require('react-helmet');
 
-var BlogIndex = require('./blog-index.js');
+var BlogList  = require('./blog-list.js');
 var BlogEntry = require('./blog-entry.js');
 
 
@@ -28,7 +28,7 @@ var App = React.createClass({
 ReactDOM.render((
   <Router history={hashHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={BlogIndex} />
+      <IndexRoute component={BlogList} />
       <Route path="/blog/:entryId" component={BlogEntry} />
     </Route>
   </Router>

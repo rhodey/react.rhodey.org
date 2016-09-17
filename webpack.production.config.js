@@ -14,7 +14,7 @@ var definePlugin = new webpack.DefinePlugin({
 
 var config = {
   entry : [
-    APP_DIR   + '/main.js',
+    APP_DIR   + '/app.js',
     STYLE_DIR + '/bundle.less'
   ],
   output : {

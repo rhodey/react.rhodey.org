@@ -3,7 +3,7 @@ var Helmet    = require('react-helmet');
 var marked    = require('marked');
 var highlight = require('highlight.js');
 var Ajax      = require('./ajax.js');
-var Config    = require('./config.js');
+var blogidx   = require('./blog-index.js');
 
 
 var BlogEntryBox = React.createClass({
@@ -20,7 +20,7 @@ var BlogEntryBox = React.createClass({
   },
   getInitialState: function() {
     return {
-      entry  : Config.entries[this.props.params.entryId],
+      entry  : blogidx[this.props.params.entryId],
       __html : ""
     };
   },

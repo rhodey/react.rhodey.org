@@ -27,24 +27,23 @@ function headerFor(filename, cb) {
   });
 }
 
-function writeToConfig(headers) {
+function writeToIndex(headers) {
   headers = headers.sort(function(a, b) {
     return (new Date(b.date).getTime() - new Date(a.date).getTime());
   });
 
-  var config  = "var config     = {};\n";
-      config += "config.entries = [];\n";
-      config += "\n\n";
+  var index  = "var index = [];\n";
+      index += "\n\n";
 
   headers.forEach(function(header) {
-    config += "config.entries['" + header.path + "'] = " + JSON.stringify(header) + ";\n";
-    config += "\n";
+    index += "index['" + header.path + "'] = " + JSON.stringify(header) + ";\n";
+    index += "\n";
   });
 
-  config += "\n";
-  config += "module.exports = config;\n";
+  index += "\n";
+  index += "module.exports = index;\n";
 
-  fs.writeFile('js/config.js', config, function(err) {
+  fs.writeFile('js/blog-index.js', index, function(err) {
     if (err) { console.log("err -> " + err); }
   });
 }
@@ -59,7 +58,7 @@ fs.readdir('md/', function(err, files) {
     files.forEach(function(file) {
       headerFor("md/" + file, function(header) {
         headers.push(header);
-        if (headers.length === files.length) { writeToConfig(headers); }
+        if (headers.length === files.length) { writeToIndex(headers); }
       });
     });
   }
