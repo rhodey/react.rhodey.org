@@ -8,7 +8,13 @@ var Header = React.createClass({
     return (
       <div className="header">
         <Helmet title="# rhodey.org" meta={metatags} />
-        <h1># rhodey.org</h1>
+        <h1># rhodey.org
+          <span className="headerLinks">
+            <a href="https://github.com/rhodey"> github</a>
+            <a href="mailto:rhodey@anhonesteffort.org"> email</a>
+            <a href="https://radiowitness.io/"> radiowitness</a>
+          </span>
+        </h1>
         <div className="headerBorder"/>
       </div>
     );
