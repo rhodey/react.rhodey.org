@@ -6,15 +6,17 @@ Every developer is allowed to code their own custom blogging platform once witho
 !!!
 
 
-Every developer is allowed to code their own custom blogging platform once without embarrassment, twice no way. Admittedly this site is my second shot at the task and although it has been a lot of fun I'm definitely having a laugh. Last time I attempted this I used the Java HTTP Server framework [Dropwizard](http://www.dropwizard.io/1.0.0/docs/) for API & static assets, [PostgreSQL](https://www.postgresql.org/) for content & metadata storage, [FreeMarker](http://freemarker.org/) as a server-side templating engine, and some obscure JavaScript Markdown parser. In retrospect the first attempt was, ***errrrrrr...*** pretty rough, sometimes my appreciation of *Dropwizard* shows in the wrong ways. This second attempt feels much more appropriate, what do ya think?
+Every developer is allowed to code their own custom blogging platform once without embarrassment, twice no way. Admittedly this site is my second shot at the task and although it has been a lot of fun I'm definitely having a laugh. Last time I attempted this I used the Java HTTP Server framework [Dropwizard](http://www.dropwizard.io/1.0.0/docs/) for API & static assets, [PostgreSQL](https://www.postgresql.org/) for content & metadata storage, [FreeMarker](http://freemarker.org/) as a server-side templating engine, and some obscure JavaScript Markdown parser. In retrospect the first attempt was, ***errrrrrr...*** pretty bad; sometimes my appreciation of *Dropwizard* shows in the wrong ways. This second attempt feels much more appropriate, what do ya think?
 
 + `100%` Static Assets
 + [Nginx](https://nginx.org/) HTTP Server
 + [React.js](https://facebook.github.io/react/) Client-side Templating
++ [React Helmet](https://github.com/nfl/react-helmet) Tag Management
 + [Marked](https://www.npmjs.com/package/marked) Markdown Parsing
++ [Highlight.js](https://highlightjs.org) Syntax Highlighting
 
 ## Static Assets
-First off browse over to the [GitHub repo](https://github.com/rhodey/rhodey.org/tree/ed7b1af8feab645622639cf6bae76157686c9c88) for this site, all of the code **and** content is hosted in this repo. The full text of every blog entry can be found in the `md/` directory and if you view the *"raw"* Markdown source you'll see that the first six lines of every file are a header, the form of which is:
+First off browse over to the [GitHub repo](https://github.com/rhodey/rhodey.org/tree/ed7b1af8feab645622639cf6bae76157686c9c88) for this site, all of the code **and** content is hosted in this repo. The full text of every blog entry can be found in the [md/](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/gen-blog-index.js) directory and if you view the *"raw"* Markdown source you'll see that the first six lines of every file are a header, the form of which is:
 
 ```
 !!!
@@ -90,7 +92,7 @@ module.exports = index;
 ```
 
 ## React.js
-[React.js](https://facebook.github.io/react/) is the new hotness *blah blahh blahhh*, many people are probably sick of hearing about it but honestly the release of *React.js* was a big deal for me. I've been toying with JavaScript since 8th grade but until *React* came along I was never able to move past small scripting experiments, whenever a project exceeded a certain size it'd just begin to fall apart. Now thanks to *React* I've published three webapps in the past five months and excited for the fourth.
+[React.js](https://facebook.github.io/react/) is the new hotness *blah blahh blahhh*, many people are probably sick of hearing about it but honestly the release of *React.js* was a big deal for me. I've been toying with JavaScript since 8th grade but until *React* came along I was never able to move past small scripting experiments, whenever a project exceeded a certain size it'd just begin to fall apart. Now thanks to *React* I've published three webapps in the past five months and am excited for the fourth.
 
 ### Main Class
 The root of my app is [js/app.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/app.js) with main class `App`, all this class really does is make sure that a header is included at the top of every page:
@@ -109,7 +111,7 @@ var App = React.createClass({
 ```
 
 ### Header
-My `Header` class is defined in [js/header.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/header.js) and is mostly there to link you back to the homepage, my GitHub, my email address, and [The Radio Witness Project](https://radiowitness.io/). But `Header` also uses one awesome new tool I picked up in building this site, [React Helmet](https://github.com/nfl/react-helmet):
+My `Header` class is defined in [js/header.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/header.js) and is mostly there to link you back to the homepage, my GitHub, my email address, and [The Radio Witness Project](https://radiowitness.io/). But `Header` also uses one awesome new tool I picked up while building this site, [React Helmet](https://github.com/nfl/react-helmet):
 
 > This reusable React component will manage all of your changes to the document head with support for document title, meta, link, script, and base tags. Inspired by react-document-title
 
@@ -150,7 +152,7 @@ ReactDOM.render((
 ```
 
 ### BlogList
-`BlogList` can be found in [js/blog-list.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-list.js), its core functionality is to render the content index I explained previously in the *"Static Assets"* section. I've stripped out the (beautiful) emoticon code, CSS transition animation, and fancy AJAX prefetching to keep the focus on the core blogging platform design. The blog entry summaries in the content index are Markdown, check out how they're rendered in `BlogEntryGist` using [Marked](https://www.npmjs.com/package/marked):
+`BlogList` can be found in [js/blog-list.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-list.js), its core functionality is to render the content index I explained previously in the *"Static Assets"* section. The blog entry summaries in the content index are Markdown, notice how they're rendered in `BlogEntryGist` using [Marked](https://www.npmjs.com/package/marked). I've stripped out the undeniably beautiful [emoticon](https://en.wikipedia.org/wiki/List_of_emoticons) code, CSS transition animation, and fancy AJAX prefetching to keep the focus on the core blogging platform design:
 
 ```JavaScript
 var BlogEntryMeta = React.createClass({
@@ -218,7 +220,7 @@ var BlogList = React.createClass({
 ```
 
 ### BlogEntry
-`BlogEntry` can be found in [js/blog-entry.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-entry.js), all it does is fetch the Markdown file referenced in the content index and then render it using *Marked*. Once again I've stripped out the fancy CSS transition animation for focus:
+`BlogEntry` can be found in [js/blog-entry.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-entry.js), all it does is fetch the Markdown file referenced in the content index and then render it using *Marked*, *React Header*, and [Highlight.js](https://highlightjs.org). Once again I'm stripping out the fancy CSS transition for focus:
 
 ```JavaScript
 var BlogEntry = React.createClass({
@@ -325,7 +327,7 @@ sudo service nginx reload"
 ssh -t rhodey.org "$CMD"
 ```
 
-Of course this script is setup in my `$PATH` so now deploying to production is as easy as:
+Of course this script is setup in my `$PATH` so deploying to production is as easy as:
 
 ```bash
 $ git checkout production
@@ -334,4 +336,5 @@ $ git push -u origin production
 $ deploy-rhodey.org
 ```
 
-So far I'm very satisfied with my new blogging platform, already I've written a lot more content than last time around, hope to keep it up!
+## That's it!
+I started building this blog [four days ago](https://github.com/rhodey/rhodey.org/commit/a4361a069166a75d869ff0988cebb7f358b4a78f) and spent a good portion of that time restoring old blog posts and writing new content. All in all at the time of this writing the repo totals `348` lines of JavaScript and `124` lines of CSS, if I wasn't such an indentation & spacing freak it'd probably be significantly less. After filling this blog in with some more writing I think my next move will be to migrate to [Bootstrap 4](https://v4-alpha.getbootstrap.com/) for the sake of experience. So far I'm very satisfied with my new blogging platform, already I've written a lot more content than last time around, hope to keep it up!
