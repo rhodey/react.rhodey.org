@@ -1,7 +1,6 @@
 # rhodey.org
 
 todo:
-  + rhodey.org tech stack
   + RadioWitness.io series
   + High Frequency Trading Intro
   + Tax Scrape
