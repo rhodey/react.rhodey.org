@@ -3,10 +3,10 @@ stratfor-relationship-graph
 June 28, 2012
 Stratfor Relationship Graph
 WikiLeaks began publishing [The Global Intelligence Files](http://wikileaks.org/the-gifiles.html) in 2012, over five million e-mails from the Texas headquartered "global intelligence" company Stratfor. Sometime during that summer **long, long before [d3.js](https://d3js.org/)** I spent a few hours paging through these emails. Wikileak's website allows you to browse by date of release or date of the document itself but this method of examination soon lost my interest, what I really wanted was a holistic understanding of the emails without having to think all that much.
+<!--no banner-->
 !!!
 
 
-![The Global Intelligence Files](/img/other/stratfor-header.jpg)
 On Monday February 27th, 2012 WikiLeaks began publishing [The Global Intelligence Files](http://wikileaks.org/the-gifiles.html), over five million e-mails from the Texas headquartered "global intelligence" company Stratfor. The e-mails date between July 2004 and late December 2011 and reveal the inner workings of a company that provides confidential intelligence services to large corporations such as Dow Chemical Co, Lockheed Martin, Northrop Grumman, Raytheon and government agencies including the US Department of Homeland Security and the US Marines.
 
 Sometime during that summer **long, long before [d3.js](https://d3js.org/)** I spent a few hours paging through these emails. Wikileak's website allows you to browse by date of release or date of the document itself but this method of examination soon lost my interest, what I really wanted was a holistic understanding of the emails without having to think all that much. Pictures can be nice and simple like that, relationship graphs even better.

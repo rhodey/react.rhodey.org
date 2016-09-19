@@ -3,6 +3,7 @@ some-midi
 July 18, 2014
 Some MIDI
 Early in the Summer of 2014 I was lucky enough to drive a junky old bus days up North and spend a full week with friends and community at [ToorCamp](http://toorcamp.toorcon.net/). I wish I had done more to document the ways in which we [broke](https://twitter.com/liliakai/status/489122375506489346) and fixed this bus and how the bus broke and fixed us in return but all I have to tell you now is that at some point in that trip my laptop screen cracked, badly. My broken laptop led to weeks of unproductivity but concluded in my first MIDI composition.
+<!--no banner-->
 !!!
 
 

@@ -15,15 +15,16 @@ function headerFor(filename) {
       var header    = [];
 
       readerFor(filename).on('line', function (line) {
-        if (++lineCount > 1 && lineCount < 6) {
+        if (++lineCount > 1 && lineCount < 7) {
           header.push(line);
-        } else if (lineCount === 6) {
+        } else if (lineCount === 7) {
           resolve({
             filename : "/" + filename,
             path     : header[0],
             date     : header[1],
             title    : header[2],
-            summary  : header[3]
+            summary  : header[3],
+            banner   : header[4],
           });
         }
       });

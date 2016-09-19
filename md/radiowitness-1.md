@@ -3,10 +3,10 @@ radiowitness-where-to-start
 August 8, 2016
 The RadioWitness.io DSP Pipeline Part 1, Where to Start?
 The [Radio Witness Project](http://radiowitness.io) began in 2015 with the goal of making police radio broadcasts more accessible to journalists. From the very start it was obvious that this would be a lot of work but I really didn’t expect 18 months and three cycles of burnout. In this first post I introduce the project and explain how surprisingly difficult it was to find a starting point. *Spoiler: GNURadio made me cry*.
+![](/img/radiowitness/view-cities.png)
 !!!
 
 
-![](/img/radiowitness/view-cities.png)
 The [Radio Witness Project](http://radiowitness.io) began in 2015 with the goal of making police radio broadcasts more accessible to journalists. From the very start it was obvious that this would be a lot of work but I really didn’t expect 18 months and three cycles of burnout. I’m not a Radio Engineer, this project is much more *“Digital Signal Processing by Software Engineers”* than it is *“Software by Radio Engineers”* and to me that’s something that feels kinda new. Here’s a bulleted list of words to keep you thirsty for the remainder of this series:
 
 * DSP at millions of samples per second, **with Java**

@@ -11,20 +11,24 @@ var TRANSITION_ENTER_MS = 300;
 
 var BlogEntryBox = React.createClass({
   chopHeader: function(markdown) {
-    return markdown.split('\n').slice(6).join('\n');
+    return markdown.split('\n').slice(9).join('\n');
+  },
+  prependDate: function(markdown) {
+    return "*" + this.state.entry.date + "* - " + markdown;
   },
   loadMarkdown: function() {
     Ajax.get(
       this.state.entry.filename,
       function(markdown) {
-        this.setState({ __html : marked(this.chopHeader(markdown)) });
+        this.setState({ entryHtml : marked(this.prependDate(this.chopHeader(markdown))) });
       }.bind(this)
     );
   },
   getInitialState: function() {
     return {
-      entry  : blogidx[this.props.params.entryId],
-      __html : ""
+      entry      : blogidx[this.props.params.entryId],
+      bannerHtml : marked(blogidx[this.props.params.entryId].banner),
+      entryHtml  : ""
     };
   },
   componentWillMount: function() {
@@ -33,11 +37,12 @@ var BlogEntryBox = React.createClass({
   },
   render: function() {
     var items = [];
-    if (this.state.__html.length > 0) {
+    if (this.state.entryHtml.length > 0) {
       items.push((
-        <div>
+        <div key="hack">
           <h1>{this.state.entry.title}</h1>
-          <div className="blogEntryMarkdown" key="hack" dangerouslySetInnerHTML={this.state} />
+          <div className="blogEntryBanner" dangerouslySetInnerHTML={{__html : this.state.bannerHtml}} />
+          <div className="blogEntryMarkdown" dangerouslySetInnerHTML={{__html : this.state.entryHtml}} />
         </div>
       ));
     }
