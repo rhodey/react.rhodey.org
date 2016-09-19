@@ -8,23 +8,27 @@ function readerFor(filename) {
   });
 }
 
-function headerFor(filename, cb) {
-  var lineCount = 0;
-  var header    = [];
+function headerFor(filename) {
+  return new Promise(
+    function(resolve, reject) {
+      var lineCount = 0;
+      var header    = [];
 
-  readerFor(filename).on('line', function (line) {
-    if (++lineCount > 1 && lineCount < 6) {
-      header.push(line);
-    } else if (lineCount === 6) {
-      cb({
-        filename : "/" + filename,
-        path     : header[0],
-        date     : header[1],
-        title    : header[2],
-        summary  : header[3]
+      readerFor(filename).on('line', function (line) {
+        if (++lineCount > 1 && lineCount < 6) {
+          header.push(line);
+        } else if (lineCount === 6) {
+          resolve({
+            filename : "/" + filename,
+            path     : header[0],
+            date     : header[1],
+            title    : header[2],
+            summary  : header[3]
+          });
+        }
       });
     }
-  });
+  );
 }
 
 function writeToIndex(headers) {
@@ -49,17 +53,18 @@ function writeToIndex(headers) {
 }
 
 
-var headers = [];
 fs.readdir('md/', function(err, files) {
-  files = files.filter(function(file) { return file.endsWith(".md"); });
+  var headers = [];
+
   if (err) {
     console.log("err -> " + err);
+    process.exit(1);
   } else {
-    files.forEach(function(file) {
-      headerFor("md/" + file, function(header) {
-        headers.push(header);
-        if (headers.length === files.length) { writeToIndex(headers); }
-      });
+    files.filter(function(file) { return file.endsWith('.md'); }).forEach(function(file) {
+      headers.push(headerFor("md/" + file));
+    });
+    Promise.all(headers).then(function(vals) {
+      writeToIndex(vals);
     });
   }
 });
