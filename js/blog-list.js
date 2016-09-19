@@ -3,7 +3,6 @@ var Link        = require('react-router').Link;
 var CssTransGrp = require('react-addons-css-transition-group');
 var marked      = require('marked');
 var blogidx     = require('./blog-index.js');
-var Ajax        = require('./ajax.js');
 
 var TRANSITION_ENTER_MS = 300;
 var EMOTI_INTERVAL      = 800;
@@ -59,19 +58,6 @@ var BlogEntryGist = React.createClass({
 });
 
 var BlogListItem = React.createClass({
-  getInitialState: function() {
-    return { cached : false };
-  },
-  fillCache: function() {
-    if (this.state.cached === false) {
-      this.setState({ cached : true });
-    }
-  },
-  componentWillUpdate: function(nextProps, nextState) {
-    if (this.state.cached !== nextState.cached) {
-      Ajax.get(this.props.entry.filename, function() {});
-    }
-  },
   render: function() {
     return (
       <div className="blogListItem" onMouseOver={this.fillCache}>
