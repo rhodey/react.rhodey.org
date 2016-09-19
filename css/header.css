@@ -2,17 +2,6 @@
   padding-bottom: 22px;
 }
 
-.headerLinks {
-  word-spacing: 10px;
-  font-size: 0.5em;
-}
-
-.headerLinks a {
-  color: #333;
-  font-weight: bold;
-  text-decoration: line-through;
-}
-
 .headerBorder {
   padding-top: 2px;
   border-bottom: 2px solid #000;
@@ -20,4 +9,23 @@
 
 .header h1 {
   margin: 0px;
+}
+
+.header a {
+ color: #333;
+ text-decoration: none;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.headerLinks {
+  word-spacing: 10px;
+  font-size: 0.5em;
+}
+
+.headerLinks a {
+  font-weight: bold;
+  text-decoration: line-through;
 }

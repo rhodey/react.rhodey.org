@@ -1,4 +1,5 @@
 var React    = require('react');
+var Link     = require('react-router').Link;
 var Helmet   = require('react-helmet');
 var metatags = require('./meta-tags.js');
 
@@ -8,7 +9,7 @@ var Header = React.createClass({
     return (
       <div className="header">
         <Helmet title="# rhodey.org" meta={metatags} />
-        <h1># rhodey.org
+        <h1><Link to="/"># rhodey.org</Link>
           <span className="headerLinks">
             <a href="https://github.com/rhodey"> github</a>
             <a href="mailto:rhodey@anhonesteffort.org"> email</a>
