@@ -1,11 +1,13 @@
-var React   = require('react');
-var Link    = require('react-router').Link;
-var marked  = require('marked');
-var blogidx = require('./blog-index.js');
-var Ajax    = require('./ajax.js');
+var React       = require('react');
+var Link        = require('react-router').Link;
+var CssTransGrp = require('react-addons-css-transition-group');
+var marked      = require('marked');
+var blogidx     = require('./blog-index.js');
+var Ajax        = require('./ajax.js');
 
-var EMOTI_INTERVAL = 800;
-var EMOTICONS      = [
+var TRANSITION_ENTER_MS = 300;
+var EMOTI_INTERVAL      = 800;
+var EMOTICONS           = [
   "o_o",     "0_o",        "o_0",
   "(>_<)",   "<(>_<)",     "(>_<)>",
   "(^_^)",   "<(^_^)",     "(^_^)>",
@@ -88,29 +90,41 @@ var BlogListItem = React.createClass({
 
 var BlogListBox = React.createClass({
   cycleEmoticon: function() {
+    var emotiIdx = this.state.emotiIdx + 1;
+    var items    = Object.keys(blogidx).map(function(key, idx) {
+      var emoticon = EMOTICONS[(emotiIdx - idx) % EMOTICONS.length];
+      return <BlogListItem key={key} entry={blogidx[key]} emoticon={emoticon} />;
+    }.bind(this));
+
     this.setState({
-      emotiIdx  : this.state.emotiIdx + 1,
+      items     : items,
+      emotiIdx  : emotiIdx,
       timeoutId : setTimeout(this.cycleEmoticon, EMOTI_INTERVAL)
     });
   },
   getInitialState: function() {
     return {
+      items     : [],
+      timeoutId : -1,
       emotiIdx  : Math.floor(Math.random() * 100),
-      timeoutId : setTimeout(this.cycleEmoticon, EMOTI_INTERVAL)
     };
+  },
+  componentDidMount: function() {
+    this.cycleEmoticon();
   },
   componentWillUnmount: function() {
     clearTimeout(this.state.timeoutId);
   },
   render: function() {
-    var items = Object.keys(blogidx).map(function(key, idx) {
-      var emoticon = EMOTICONS[(this.state.emotiIdx - idx) % EMOTICONS.length];
-      return <BlogListItem key={key} entry={blogidx[key]} emoticon={emoticon} />;
-    }.bind(this));
-
     return (
       <div className="blogListBox">
-        {items}
+        <CssTransGrp
+          transitionName="blogList"
+          transitionEnterTimeout={TRANSITION_ENTER_MS}
+          transitionLeaveTimeout={0}
+        >
+          {this.state.items}
+        </CssTransGrp>
       </div>
     );
   }

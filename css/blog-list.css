@@ -1,5 +1,13 @@
 .blogListBox { }
 
+.blogList-enter {
+  opacity: 0.01;
+}
+.blogList-enter.blogList-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
 .blogListItem { }
 
 .blogListItem h2 {
