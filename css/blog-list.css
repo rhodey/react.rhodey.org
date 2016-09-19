@@ -8,8 +8,14 @@
   transition: opacity 300ms ease-in;
 }
 
-.blogListItem { }
+.blogListItem .blogEntryEmoticon {
+  font-size: 1.5em;
+}
+.blogListItem .blogEntryDate {
+  font-size: 1.2em;
+}
 
+.blogListItem { }
 .blogListItem h2 {
   margin: 0px;
 }
@@ -17,16 +23,7 @@
 .blogListItem .blogEntryMeta {
   padding-top: 5px;
 }
-
 .blogListItem .blogEntryMeta .row {
   margin: 0px;
   padding: 0px;
-}
-
-.blogListItem .blogEntryEmoticon {
-  font-size: 1.5em;
-}
-
-.blogListItem .blogEntryDate {
-  font-size: 1.2em;
 }
