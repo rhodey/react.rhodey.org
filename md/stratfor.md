@@ -52,7 +52,6 @@ their own.
 
 **NOTE** there is something seriously wrong with the encoding of the metadata.csv file I got from Wikileaks site, newer dumps may have a more sane encoding but as of now windows cannot parse these files to save its life. Simply parsing the file character by character and printing one char at a time misses 50% of the entire file. I'll be looking into this...
 
-## email_relationship_analysis.adb
 ```ada
 with Ada.Text_IO;            use Ada.Text_IO;
 with Ada.Command_Line;       use Ada.Command_Line;

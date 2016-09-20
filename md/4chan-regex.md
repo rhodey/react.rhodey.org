@@ -7,9 +7,7 @@ January 1, 2007
 !!!
 
 
-**Many, many years ago** I decided that I needed some regex practice, and background aside I'd like to think that any survey is a survey worth sharing so here we go!
-
-Download an *[a/s/l](http://www.urbandictionary.com/define.php?term=asl)* thread from 4chan:
+**Many, many years ago** I decided that I needed some regex practice, and background aside I'd like to think that any survey is a survey worth sharing so here we go! Download an *[a/s/l](http://www.urbandictionary.com/define.php?term=asl)* thread from 4chan:
 ```
 $ wget http://boards.4chan.org/b/res/496308962
 ```

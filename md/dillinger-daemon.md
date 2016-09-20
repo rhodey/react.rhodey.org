@@ -11,7 +11,7 @@ I use Vim as my one, true text editor and generally do a great job of abstaining
 
 > Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
 
-The editor is beautiful, you really should checkout the cloud-hosted online demo [here](http://dillinger.io/). Installing Dillinger locally is as easy as:
+The editor is beautiful, you really should check out the cloud-hosted online demo [here](http://dillinger.io/). Installing Dillinger locally is as easy as:
 
 ```
 $ wget https://github.com/joemccann/dillinger/archive/3.5.1.zip -O dillinger-3.5.1.zip
