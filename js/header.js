@@ -8,8 +8,8 @@ var Header = React.createClass({
   render: function() {
     return (
       <div className="header">
-        <Helmet title="# rhodey.org" meta={metatags} />
-        <h1><Link to="/"># rhodey.org</Link>
+        <Helmet title=" " titleTemplate="%s #rhodey.org" meta={metatags} />
+        <h1><Link to="/">#rhodey.org</Link>
           <span className="headerLinks">
             <a href="https://github.com/rhodey"> github</a>
             <a href="mailto:rhodey@anhonesteffort.org"> email</a>
