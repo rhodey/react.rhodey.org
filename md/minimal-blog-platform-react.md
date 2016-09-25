@@ -288,7 +288,7 @@ server {
   listen 8443;
   server_name .rhodey.org;
   ssl on;
-  ssl_certificate /home/nginx/letsencrypt/live/rhodey.org/cert.pem;
+  ssl_certificate /home/nginx/letsencrypt/live/rhodey.org/fullchain.pem;
   ssl_certificate_key /home/nginx/letsencrypt/live/rhodey.org/privkey.pem;
 
   location / {

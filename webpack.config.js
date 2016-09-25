@@ -27,8 +27,9 @@ var config = {
     STYLE_DIR + '/bundle.less'
   ]),
   output : {
-    path     : BUILD_DIR,
-    filename : 'bundle.js'
+    path       : BUILD_DIR,
+    publicPath : ("http://" + (process.env.DEV_HOST || 'localhost') + ":8080/"),
+    filename   : 'bundle.js'
   },
   module : {
     loaders : [
