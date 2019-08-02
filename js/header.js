@@ -8,7 +8,7 @@ var Header = React.createClass({
   render: function() {
     return (
       <div className="header">
-        <Helmet title=" " titleTemplate="%s #rhodey.org" meta={metatags} />
+        <Helmet title=" " titleTemplate="%s rhodey.org" meta={metatags} />
         <h1><Link to="/">#rhodey.org</Link>
           <span className="headerLinks">
             <a href="https://github.com/rhodey"> github</a>
