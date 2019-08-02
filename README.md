@@ -1,5 +1,22 @@
 # rhodey.org
 
+## Build
+```
+$ npm install
+$ npm run index
+$ npm run bundle
+```
+
+## Deploy
+```
+$ docker run --name rhodey.org \
+    -v /host/path/rhodey.org/nginx.conf:/etc/nginx/nginx.conf:ro \
+    -v /etc/letsencrypt:/etc/letsencrypt:ro \
+    -v /host/path/rhodey.org:/usr/share/nginx/html:ro \
+    -d nginx
+```
+
+## todo
 todo:
   + RadioWitness.io series
   + High Frequency Trading Intro
@@ -14,26 +31,5 @@ todo:
   + R.O.B.
   + First Freelance Gig
 
-## Setup
-```
-$ npm install
-```
-
-## Index Markdown
-```
-$ npm run index
-```
-
-## Bundle
-```
-$ npm run bundle
-```
-
-## Testing
-```
-$ npm run dev
-```
-
 ## License
-
 Copyright 2016 An Honest Effort LLC
