@@ -13,6 +13,7 @@ $ docker run --name rhodey.org \
     -v /host/path/rhodey.org/nginx.conf:/etc/nginx/nginx.conf:ro \
     -v /etc/letsencrypt:/etc/letsencrypt:ro \
     -v /host/path/rhodey.org:/usr/share/nginx/html:ro \
+    -p 443:443 \
     -d nginx
 ```
 
