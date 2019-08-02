@@ -2,7 +2,7 @@
 minimal-blog-platform-react
 September 19, 2016
 Building A Minimal Blogging Platform with React.js
-Every developer is allowed to code their own custom blogging platform once without embarrassment, twice no way. Admittedly this site is my second shot at the task and although it has been a lot of fun I'm definitely having a laugh. This second attempt feels pretty good, see what you think!
+Everyone does blogging differently, this site is my second shot at coding myself a blogging platform. This is largely an exercise in getting more familiar with React.
 <!--no banner-->
 !!!
 
@@ -17,7 +17,7 @@ Every developer is allowed to code their own custom blogging platform once witho
 + [Highlight.js](https://highlightjs.org) Syntax Highlighting
 
 ## Static Assets
-First off browse over to the [GitHub repo](https://github.com/rhodey/rhodey.org/tree/ed7b1af8feab645622639cf6bae76157686c9c88) for this site, all of the code **and** content is hosted in this repo. The full text of every blog entry can be found in the [md/](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/gen-blog-index.js) directory and if you view the *"raw"* Markdown source you'll see that the first six lines of every file are a header, the form of which is:
+First off browse over to the [GitHub repo](https://github.com/rhodey/react.rhodey.org/tree/ed7b1af8feab645622639cf6bae76157686c9c88) for this site, all of the code **and** content is hosted in this repo. The full text of every blog entry can be found in the [md/](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/gen-blog-index.js) directory and if you view the *"raw"* Markdown source you'll see that the first six lines of every file are a header, the form of which is:
 
 ```
 !!!
@@ -28,7 +28,7 @@ First off browse over to the [GitHub repo](https://github.com/rhodey/rhodey.org/
 !!!
 ```
 
-The exclamation marks are only visual guides but the `<url path>` param is a bit confusing, really this is just the URL I want to have the blog entry served from, for example `ethereum-wallet-exploit` will be served from `/blog/ethereum-wallet-exploit`. The metadata in these headers is super minimal but right now it is sufficient, in the future I can imagine adding some stuff for HTML `<meta>` tags. All headers in the `md/` directory are extracted and used to generate a content index, this is done by [js/gen-blog-index.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/gen-blog-index.js):
+The exclamation marks are only visual guides but the `<url path>` param is a bit confusing, really this is just the URL I want to have the blog entry served from, for example `ethereum-wallet-exploit` will be served from `/blog/ethereum-wallet-exploit`. The metadata in these headers is super minimal but right now it is sufficient, in the future I can imagine adding some stuff for HTML `<meta>` tags. All headers in the `md/` directory are extracted and used to generate a content index, this is done by [js/gen-blog-index.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/gen-blog-index.js):
 
 ```JavaScript
 etc...
@@ -80,7 +80,7 @@ function writeToIndex(headers) {
 etc...
 ```
 
-Writing JavaScript to write JavaScript feels like a dirty, filthy hack but it also works perfectly fine ¯\\_(ツ)_/¯. I added a *"run script"* to my [package.json](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/package.json) so now I can do `npm run index` to generate the content index. Additionally I bundle and minify all JavaScript and CSS with  `npm run bundle` and this step includes content index generation too. I think the content index (*blog-index.js*) is technically a build artifact so I exclude it with `.gitignore` but the result looks like this:
+Writing JavaScript to write JavaScript feels like a dirty, filthy hack but it also works perfectly fine ¯\\_(ツ)_/¯. I added a *"run script"* to my [package.json](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/package.json) so now I can do `npm run index` to generate the content index. Additionally I bundle and minify all JavaScript and CSS with  `npm run bundle` and this step includes content index generation too. I think the content index (*blog-index.js*) is technically a build artifact so I exclude it with `.gitignore` but the result looks like this:
 
 ```JavaScript
 var index = [];
@@ -96,7 +96,7 @@ module.exports = index;
 [React.js](https://facebook.github.io/react/) is the new hotness *blah blahh blahhh*, many people are probably sick of hearing about it but honestly the release of *React.js* was a big deal for me. I've been toying with JavaScript since 8th grade but until *React* came along I was never able to move past small scripting experiments, whenever a project exceeded a certain size it'd just begin to fall apart. Now thanks to *React* I've published three webapps in the past five months and am excited for the fourth.
 
 ### Main Class
-The root of my app is [js/app.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/app.js) with main class `App`, all this class really does is make sure that a header is included at the top of every page:
+The root of my app is [js/app.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/app.js) with main class `App`, all this class really does is make sure that a header is included at the top of every page:
 
 ```JavaScript
 var App = React.createClass({
@@ -112,11 +112,11 @@ var App = React.createClass({
 ```
 
 ### Header
-My `Header` class is defined in [js/header.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/header.js) and is mostly there to link you back to the homepage, my GitHub, my email address, and [The Radio Witness Project](https://radiowitness.io/). But `Header` also uses one awesome new tool I picked up while building this site, [React Helmet](https://github.com/nfl/react-helmet):
+My `Header` class is defined in [js/header.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/header.js) and is mostly there to link you back to the homepage, my GitHub, my email address, and [The Radio Witness Project](https://radiowitness.io/). But `Header` also uses one awesome new tool I picked up while building this site, [React Helmet](https://github.com/nfl/react-helmet):
 
 > This reusable React component will manage all of your changes to the document head with support for document title, meta, link, script, and base tags. Inspired by react-document-title
 
-I use *React Helmet* to set the page title and also include a few common HTML `<meta>` tags defined in [js/meta-tags.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/meta-tags.js), anyways here's `Header`:
+I use *React Helmet* to set the page title and also include a few common HTML `<meta>` tags defined in [js/meta-tags.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/meta-tags.js), anyways here's `Header`:
 
 ```JavaScript
 var Header = React.createClass({
@@ -139,7 +139,7 @@ var Header = React.createClass({
 ```
 
 ### Routes
-All the routes for my app are defined alongside `App` in [js/app.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/app.js), pretty simple for now, `BlogList` is the landing page and `BlogEntry`'s will be served from `/blog/:entryId`:
+All the routes for my app are defined alongside `App` in [js/app.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/app.js), pretty simple for now, `BlogList` is the landing page and `BlogEntry`'s will be served from `/blog/:entryId`:
 
 ```JavaScript
 ReactDOM.render((
@@ -153,7 +153,7 @@ ReactDOM.render((
 ```
 
 ### BlogList
-`BlogList` can be found in [js/blog-list.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-list.js), its core functionality is to render the content index I explained previously in the *"Static Assets"* section. The blog entry summaries in the content index are Markdown, notice how they're rendered in `BlogEntryGist` using [Marked](https://www.npmjs.com/package/marked). I've stripped out the undeniably beautiful [emoticon](https://en.wikipedia.org/wiki/List_of_emoticons) code, CSS transition animation, and fancy AJAX prefetching to keep the focus on the core blogging platform design. *UPDATE: the fancy AJAX cache prefetch backfired on me like deep down I always knew it would.*
+`BlogList` can be found in [js/blog-list.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-list.js), its core functionality is to render the content index I explained previously in the *"Static Assets"* section. The blog entry summaries in the content index are Markdown, notice how they're rendered in `BlogEntryGist` using [Marked](https://www.npmjs.com/package/marked). I've stripped out the undeniably beautiful [emoticon](https://en.wikipedia.org/wiki/List_of_emoticons) code, CSS transition animation, and fancy AJAX prefetching to keep the focus on the core blogging platform design. *UPDATE: the fancy AJAX cache prefetch backfired on me like deep down I always knew it would.*
 
 ```JavaScript
 var BlogEntryMeta = React.createClass({
@@ -221,7 +221,7 @@ var BlogList = React.createClass({
 ```
 
 ### BlogEntry
-`BlogEntry` can be found in [js/blog-entry.js](https://github.com/rhodey/rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-entry.js), all it does is fetch the Markdown file referenced in the content index and then render it using *Marked*, *React Header*, and [Highlight.js](https://highlightjs.org). Once again I'm stripping out the fancy CSS transition for focus:
+`BlogEntry` can be found in [js/blog-entry.js](https://github.com/rhodey/react.rhodey.org/blob/ed7b1af8feab645622639cf6bae76157686c9c88/js/blog-entry.js), all it does is fetch the Markdown file referenced in the content index and then render it using *Marked*, *React Header*, and [Highlight.js](https://highlightjs.org). Once again I'm stripping out the fancy CSS transition for focus:
 
 ```JavaScript
 var BlogEntry = React.createClass({
@@ -338,4 +338,4 @@ $ deploy-rhodey.org
 ```
 
 ## That's it!
-I started building this blog [four days ago](https://github.com/rhodey/rhodey.org/commit/a4361a069166a75d869ff0988cebb7f358b4a78f) and spent a good portion of that time restoring old blog posts and writing new content. All in all at the time of this writing the repo totals `348` lines of JavaScript and `124` lines of CSS, if I wasn't such an indentation & spacing freak it'd probably be significantly less. After filling this blog in with some more writing I think my next move will be to migrate to [Bootstrap 4](https://v4-alpha.getbootstrap.com/) for the sake of experience. So far I'm very satisfied with my new blogging platform, already I've written a lot more content than last time around, hope to keep it up!
+I started building this blog [four days ago](https://github.com/rhodey/react.rhodey.org/commit/a4361a069166a75d869ff0988cebb7f358b4a78f) and spent a good portion of that time restoring old blog posts and writing new content. All in all at the time of this writing the repo totals `348` lines of JavaScript and `124` lines of CSS, if I wasn't such an indentation & spacing freak it'd probably be significantly less. After filling this blog in with some more writing I think my next move will be to migrate to [Bootstrap 4](https://v4-alpha.getbootstrap.com/) for the sake of experience. So far I'm very satisfied with my new blogging platform, already I've written a lot more content than last time around, hope to keep it up!
