@@ -5,6 +5,7 @@ bundle.css
 js/blog-index.js
 
 node_modules/
+package-lock.json
 npm-debug.log
 
 ~*
