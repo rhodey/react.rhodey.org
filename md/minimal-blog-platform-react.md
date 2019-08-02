@@ -7,7 +7,7 @@ Everyone does blogging differently, this site is my second shot at coding myself
 !!!
 
 
-Every developer is allowed to code their own custom blogging platform once without embarrassment, twice no way. Admittedly this site is my second shot at the task and although it has been a lot of fun I'm definitely having a laugh. Last time I attempted this I used the Java HTTP Server framework [Dropwizard](http://www.dropwizard.io/1.0.0/docs/) for API & static assets, [PostgreSQL](https://www.postgresql.org/) for content & metadata storage, [FreeMarker](http://freemarker.org/) as a server-side templating engine, and some obscure JavaScript Markdown parser. In retrospect the first attempt was, ***errrrrrr...*** pretty bad; sometimes my appreciation of *Dropwizard* shows in the wrong ways. This second attempt feels much more appropriate, what do ya think?
+Everyone does blogging differently, this site is my second shot at coding myself a blogging platform. This is largely an exercise in getting more familiar with React. Last time I attempted this I used the Java HTTP Server framework [Dropwizard](http://www.dropwizard.io/1.0.0/docs/) for API & static assets, [PostgreSQL](https://www.postgresql.org/) for content & metadata storage, [FreeMarker](http://freemarker.org/) as a server-side templating engine, and some obscure JavaScript Markdown parser. In retrospect the first attempt was, ***errrrrrr...*** pretty bad; sometimes my appreciation of *Dropwizard* shows in the wrong ways. This second attempt feels much more appropriate, what do ya think?
 
 + `100%` Static Assets
 + [Nginx](https://nginx.org/) HTTP Server
